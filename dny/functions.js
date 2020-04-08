@@ -91,6 +91,7 @@ function smoothScrollToTop(event){
 
 // EASING FUNCTION 
 
+
 Math.linearTween = function (t, b, c, d) {
 	return c*t/d + b;
 };
@@ -101,5 +102,7 @@ Math.easeInOutQuad = function (t, b, c, d) {
 	t--;
 	return -c/2 * (t*(t-2) - 1) + b;
 };
+
+// source: http://gizma.com/easing/#l
 
 //-----------------------------------------------------------------------------------------------------------
