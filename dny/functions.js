@@ -1,4 +1,5 @@
 // GET ELEMENT POSITION
+
 function getElementPosition(element){
 
     let box = element.getBoundingClientRect();
@@ -13,6 +14,7 @@ function getElementPosition(element){
 //----------------------------------------------------------------------------------------------
 
 // ADD INFOWINDOW TO ELEMENT 
+
 function addInfoWindowToElement(window, element){
 
     let myTimeOut;
@@ -56,5 +58,48 @@ function addInfoWindowToElement(window, element){
 } 
 //-----------------------------------------------------------------------------------------------------------
 
+// SMOOTH SCROLL TO TOP
 
+function smoothScrollToTop(event){
+    event.preventDefault();
 
+    const targetPosition = 0;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    let durotation = 800;
+    let start = null;
+
+    window.requestAnimationFrame(step);
+
+    //One animation step
+    function step(timestamp){
+        if (!start) start = timestamp;
+        const progress = timestamp - start;
+
+        //animation here
+
+        //linera
+        // window.scrollTo(0,distance*(progress/durotation) + startPosition);
+
+        // In out quat
+        window.scrollTo(0,Math.easeInOutQuad(progress,startPosition,distance,durotation));
+
+        if (progress < durotation) window.requestAnimationFrame(step);
+    }
+}
+//-----------------------------------------------------------------------------------------------------------
+
+// EASING FUNCTION 
+
+Math.linearTween = function (t, b, c, d) {
+	return c*t/d + b;
+};
+
+Math.easeInOutQuad = function (t, b, c, d) {
+	t /= d/2;
+	if (t < 1) return c/2*t*t + b;
+	t--;
+	return -c/2 * (t*(t-2) - 1) + b;
+};
+
+//-----------------------------------------------------------------------------------------------------------
