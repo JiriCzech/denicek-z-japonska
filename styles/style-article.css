@@ -54,6 +54,8 @@ p{
 
 span{
     color: blue;
+    cursor: help;
+    z-index: 2;
 }
 
 .pepa {
@@ -155,4 +157,45 @@ iframe{
     opacity: 0;
     visibility: hidden;
     transition: 1s;
+}
+
+
+.czk-pop{
+    font-size: 1.4em;
+    background-color: #4C7ABB;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+    padding-bottom: 0.2em;
+    border-radius: 20px;
+}
+
+.czk-pop:after, .czk-pop:before {
+	bottom: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+    pointer-events: none;
+    border-bottom-color: #4C7ABB;
+    z-index: 1;
+    
+}
+
+.czk-pop:after {
+	/* border-color: rgba(136, 183, 213, 0);
+	border-bottom-color: teal; */
+	border-width: 8px;
+    margin-left: -8px;
+    z-index: 1;
+    
+}
+.czk-pop:before {
+	/* border-color: rgba(194, 225, 245, 0);
+	border-bottom-color: teal; */
+	border-width: 14px;
+    margin-left: -14px;
+    z-index: 1;
+    
 }

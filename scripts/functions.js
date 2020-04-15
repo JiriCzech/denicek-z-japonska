@@ -42,7 +42,7 @@ function addInfoWindowToElement(window, element){
     })//----------------------------------------------------------------------
 
     // Element mouseleave
-    spanGate.addEventListener("mouseleave", ()=>{
+    element.addEventListener("mouseleave", ()=>{
         hideWindowAfter(timeToHide);
     })//----------------------------------------------------------------------
 
